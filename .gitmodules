@@ -1,0 +1,3 @@
+[submodule "usb-rubber-ducky"]
+	path = usb-rubber-ducky
+	url = https://github.com/hak5darren/USB-Rubber-Ducky
