@@ -1,10 +1,10 @@
-name: 'curl-github-action'
+name: 'usb-rubber-ducky-github-action'
 author: '4thel00z'
 branding:
   icon: 'award'  
   color: 'blue'
-description: "Call curl from within your github action!
-May it be to notify 🔔 another service or log an error message to another system! ⚠️"
+description: "Call duckyencoder.jar from within your github action!
+Write your usb-rubber-ducky payloads, push them to github and have them compiled to p4wn some newß$ lel"
 runs: 
   using: 'docker'
   image: 'Dockerfile'
