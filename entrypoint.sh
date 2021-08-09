@@ -1,5 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
+echo $USER, $UID, $GUID
+echo "ENTRYPOINT: $*"
 
-sh -c "curl --silent --show-error --fail $*"
+java -jar /usb-rubber-ducky/duckencoder.jar $*
