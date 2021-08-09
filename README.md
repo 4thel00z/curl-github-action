@@ -1,7 +1,12 @@
-# curl Github action
+# usb-rubber-ducky Github action
 
-curl an endpoint from your Github Action.
-Returns an non-zero status code on non succesful HTTP codes.
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
+Compiles usb-rubber-ducky scripts with given property file and exports the bin
+as an artifact.
+
+🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆🦆
+
 
 ## Usage
 
@@ -11,10 +16,13 @@ jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
-    - name: curl
-      uses: 4thel00z/curl-github-action@master
+    - uses: actions/checkout@v2
+    - name: usb-rubber-ducky
+      uses: 4thel00z/usb-rubber-ducky-github-action@master
       with:
-        args: https://httpbin.org/get
+        args: -- -i /github/workspace/<relative-path-to-your-script-in-your-repo.txt> -o dist/payload.bin -l de
+	path: |
+		dist
 ```
 
 ```
@@ -23,15 +31,18 @@ jobs:
   curl:
     runs-on: ubuntu-latest
     steps:
-    - name: curl
-      uses: 4thel00z/curl-github-action@master
+    - uses: actions/checkout@v2
+    - name: usb-rubber-ducky
+      uses: 4thel00z/usb-rubber-ducky-github-action@master
       with:
-        args: -X POST https://httpbin.org/post
+        args: -- -i /github/workspace/<relative-path-to-your-script-in-your-repo.txt> -o dist/payload.bin -l de
+	path: |
+		dist
 ```
 ## Run locally
 
 ```
-just run https://httpbin.org/get
+just run -v $PWD/scripts:/scripts -- -i /scripts/<path-to-your-script.txt> -o payload.bin -l de
 ```
 
 ## Maintainer
